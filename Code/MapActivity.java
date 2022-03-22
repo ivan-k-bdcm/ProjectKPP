@@ -1,36 +1,19 @@
 package com.example.firstapp;
 
+import android.os.Bundle;
+import android.view.View;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-
-
-public class MainActivity extends AppCompatActivity {
+public class MapActivity extends AppCompatActivity {
 
     private View decorView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        Button buttonStart = (Button)findViewById(R.id.buttonStart);
-        buttonStart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                try {
-                    Intent intent = new Intent(MainActivity.this, MapActivity.class);
-                    startActivity(intent); finish();
-                } catch (Exception e){
-                    //Exception
-                }
-            }
-        });
-
+        setContentView(R.layout.activity_map_main);
         decorView = getWindow().getDecorView();
         decorView.setOnSystemUiVisibilityChangeListener(new View.OnSystemUiVisibilityChangeListener() {
             @Override
