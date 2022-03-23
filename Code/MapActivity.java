@@ -17,6 +17,8 @@ public class MapActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map_main);
+
+        // Implementation for hiding the bar
         decorView = getWindow().getDecorView();
         decorView.setOnSystemUiVisibilityChangeListener(new View.OnSystemUiVisibilityChangeListener() {
             @Override
@@ -39,6 +41,8 @@ public class MapActivity extends AppCompatActivity {
         }
     }
 
+
+    // Parameter for bar hiding method
     private int hideSystemBar() {
         return    View.SYSTEM_UI_FLAG_LAYOUT_STABLE
                 | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY

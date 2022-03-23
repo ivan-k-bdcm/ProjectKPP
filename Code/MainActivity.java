@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    // Check focus on window
+
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
