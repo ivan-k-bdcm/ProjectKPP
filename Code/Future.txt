@@ -1,0 +1,47 @@
+============================================================
+			- - Tutorial - -
+
+
+
+
+============================================================
+			- - Interface - -
+
+Buttons(4+1):
+	Settings + Profile - 1
+	Shop - 1
+	Forge - 1
+	Inventory - 1
+
+	Bestiary - 1 ~ ~ ~ Future
+
+Bar(1+1):
+	Energy - 1
+
+	Money - 1 ~ ~ ~ Future add bank (Capacity increase)
+
+Location:
+	MineCoreLvL1 - 1 ~ ~ ~ Coal(1-3), Copper(2-4) ~ ~ ~ ~ ~ KitStarter 
+	MineCoreLvL2 - 1 ~ ~ ~ Coal(2-5), Copper(1-2), Gold(1-3)
+	MineCoreLvL3 - 1 ~ ~ ~ Coal(2-5), 
+
+	MythicMineCore ~ ~ ~ Future 
+
+============================================================
+			- - Update Picaxe - -
+
+Stick:
+	Wood
+	Copper
+	Iron
+	. . .
+
+Tip:
+	Copper
+	Iron
+	. . .
+
+Fix:
+	Ads
+	Resource
+	Donuts-currency ~ ~ ~ Future
