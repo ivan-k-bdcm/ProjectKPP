@@ -9,6 +9,7 @@
     >
 
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -30,6 +31,132 @@
             </LinearLayout>
         </HorizontalScrollView>
     </ScrollView>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageButton
+            android:id="@+id/buttonForge"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="10dp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/forge" />
+
+        <ImageButton
+            android:id="@+id/buttonShop"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="10dp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/shop" />
+
+        <ImageButton
+            android:id="@+id/buttonInventory"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="10dp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/backpack" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/style_battery_bar"
+        android:orientation="horizontal"
+        android:padding="1dp"
+        android:layout_marginRight="200dp"
+        android:layout_marginTop="6dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/battery1"
+            android:layout_width="12dp"
+            android:layout_height="6dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginLeft="1dp"
+            android:layout_weight="1"
+            android:background="@drawable/style_battery" />
+
+        <TextView
+            android:id="@+id/battery2"
+            android:layout_width="12dp"
+            android:layout_height="6dp"
+            android:layout_marginRight="1dp"
+            android:layout_weight="1"
+            android:background="@drawable/style_battery" />
+
+        <TextView
+            android:id="@+id/battery3"
+            android:layout_width="12dp"
+            android:layout_height="6dp"
+            android:layout_marginRight="1dp"
+            android:layout_weight="1"
+            android:background="@drawable/style_battery" />
+
+        <TextView
+            android:id="@+id/battery4"
+            android:layout_width="12dp"
+            android:layout_height="6dp"
+            android:layout_marginRight="1dp"
+            android:layout_weight="1"
+            android:background="@drawable/style_battery" />
+
+        <TextView
+            android:id="@+id/battery5"
+            android:layout_width="12dp"
+            android:layout_height="6dp"
+            android:layout_marginRight="1dp"
+            android:layout_weight="1"
+            android:background="@drawable/style_battery" />
+
+        <TextView
+            android:id="@+id/battery6"
+            android:layout_width="12dp"
+            android:layout_height="6dp"
+            android:layout_marginRight="1dp"
+            android:layout_weight="1"
+            android:background="@drawable/style_battery" />
+
+        <TextView
+            android:id="@+id/battery7"
+            android:layout_width="12dp"
+            android:layout_height="6dp"
+            android:layout_marginRight="1dp"
+            android:layout_weight="1"
+            android:background="@drawable/style_battery" />
+
+        <TextView
+            android:id="@+id/battery8"
+            android:layout_width="12dp"
+            android:layout_height="6dp"
+            android:layout_marginRight="1dp"
+            android:layout_weight="1"
+            android:background="@drawable/style_battery" />
+
+        <TextView
+            android:id="@+id/battery9"
+            android:layout_width="12dp"
+            android:layout_height="6dp"
+            android:layout_marginRight="1dp"
+            android:layout_weight="1"
+            android:background="@drawable/style_battery" />
+
+        <TextView
+            android:id="@+id/battery10"
+            android:layout_width="12dp"
+            android:layout_height="6dp"
+            android:layout_marginRight="1dp"
+            android:layout_weight="1"
+            android:background="@drawable/style_battery" />
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
