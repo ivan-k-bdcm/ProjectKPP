@@ -11,4 +11,5 @@
     <color name="yellow_dark">#AF6E09</color>
     <color name="yellow_bright">#ED9710</color>
     <color name="green_bright">#44B314</color>
+    <color name="w_inv">#00FFFFFF</color>
 </resources>
