@@ -27,7 +27,7 @@
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
                 app:layout_constraintStart_toStartOf="parent"
-                app:srcCompat="@drawable/activity_map_replace" />
+                app:srcCompat="@drawable/activity_map" />
 
             <ImageButton
                 android:id="@+id/imageButton1"
