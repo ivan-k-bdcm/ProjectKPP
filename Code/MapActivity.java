@@ -23,6 +23,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MapActivity extends AppCompatActivity {
 
+    public final long endTimeEnergyTimer = 720000;
+    public final long stepTimeEnergyTimer = 1000;
+
+
     private long backPressedTime;
     private Toast backToast;
     private View decorView;
@@ -32,6 +36,7 @@ public class MapActivity extends AppCompatActivity {
     private Handler customHandler = new Handler();
     long timeStartEnergyTimer = 0;
     long currentTimeEnergyTimer;
+
 
 
     // Array for energy
@@ -68,13 +73,7 @@ public class MapActivity extends AppCompatActivity {
             public void onClick(View view) {
                 try {
                     if (countEnergy == 0) {
-                        countEnergy = 10;
-                        TextView textCountEnergy = findViewById(R.id.countEnergy);
-                        textCountEnergy.setText(countEnergy + "/10");
-                        for(int i = 0; i < 10; i++) {
-                            TextView eP = findViewById(energy[i]);
-                            eP.setBackgroundResource(R.drawable.style_battery);
-                        }
+                        System.out.println("DON'T CLICK FU*ING BUTTON");
                     }
                     else {
                         countEnergy--;
@@ -111,9 +110,9 @@ public class MapActivity extends AppCompatActivity {
                 currentTimeEnergyTimer = System.currentTimeMillis();
 
 
-                if(countEnergy < 10 && currentTimeEnergyTimer - timeStartEnergyTimer > 10000) {
+                if(countEnergy < 10 && currentTimeEnergyTimer - timeStartEnergyTimer > endTimeEnergyTimer) {
                     timeStartEnergyTimer = System.currentTimeMillis();
-                    CountDownTimer energyTimer = new CountDownTimer(10000, 1000) {
+                    CountDownTimer energyTimer = new CountDownTimer(endTimeEnergyTimer, stepTimeEnergyTimer) {
                         @Override
                         public void onTick(long millisUntilFinished) {
                             minutes = ((int)millisUntilFinished / 1000) / 60;
