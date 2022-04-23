@@ -122,28 +122,28 @@
 
         <ImageButton
             android:id="@+id/buttonForge"
-            android:contentDescription="buttonForge"
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_margin="10dp"
+            android:contentDescription="buttonForge"
             android:scaleType="centerCrop"
             app:srcCompat="@drawable/forge" />
 
         <ImageButton
             android:id="@+id/buttonShop"
-            android:contentDescription="buttonShop"
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_margin="10dp"
+            android:contentDescription="buttonShop"
             android:scaleType="centerCrop"
             app:srcCompat="@drawable/shop" />
 
         <ImageButton
             android:id="@+id/buttonInventory"
-            android:contentDescription="buttonInventory"
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_margin="10dp"
+            android:contentDescription="buttonInventory"
             android:scaleType="centerCrop"
             app:srcCompat="@drawable/backpack" />
 
@@ -160,6 +160,24 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/hood_bar" />
 
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/AccountImage"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="10dp"
+            android:contentDescription="AccountImage"
+            android:layout_weight="1"
+            android:scaleType="centerCrop"
+            tools:srcCompat="@tools:sample/avatars" />
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout"

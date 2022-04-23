@@ -2,13 +2,17 @@ package com.example.firstapp;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.Looper;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -36,6 +40,7 @@ public class MapActivity extends AppCompatActivity {
     };
 
 
+    Dialog dialog;
 
 
     @Override
@@ -43,6 +48,18 @@ public class MapActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map_main);
 
+
+        ImageButton dialogProfileSettings = (ImageButton) findViewById(R.id.AccountImage);
+        dialogProfileSettings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog = new Dialog(MapActivity.this);
+                dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                dialog.setContentView(R.layout.infoaccount_profile);
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                dialog.show();
+            }
+        });
 
 
         ImageButton buttonEnergy = (ImageButton) findViewById(R.id.imageButton1);
