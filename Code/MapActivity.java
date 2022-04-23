@@ -23,7 +23,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MapActivity extends AppCompatActivity {
 
-    public final long endTimeEnergyTimer = 720000;
+    public final long endTimeEnergyTimer = 10000;
     public final long stepTimeEnergyTimer = 1000;
 
 
@@ -52,6 +52,10 @@ public class MapActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map_main);
+
+
+        TextView textCountEnergy = findViewById(R.id.countEnergy);
+        TextView eT = findViewById(R.id.energyTimer);
 
 
         ImageButton dialogProfileSettings = (ImageButton) findViewById(R.id.AccountImage);
@@ -86,7 +90,6 @@ public class MapActivity extends AppCompatActivity {
                         for(int i = countEnergy; i < 10; i++) {
                             TextView eP = findViewById(energy[i]);
                             eP.setBackgroundResource(R.drawable.style_battery_empty);
-                            TextView textCountEnergy = findViewById(R.id.countEnergy);
                             textCountEnergy.setText(" "+countEnergy + "/10");
                         }
 
@@ -117,7 +120,6 @@ public class MapActivity extends AppCompatActivity {
                         public void onTick(long millisUntilFinished) {
                             minutes = ((int)millisUntilFinished / 1000) / 60;
                             seconds = ((int)millisUntilFinished / 1000) % 60;
-                            TextView eT = findViewById(R.id.energyTimer);
                             eT.post(new Runnable() {
                                 @Override
                                 public void run() {
@@ -131,11 +133,16 @@ public class MapActivity extends AppCompatActivity {
                             countEnergy++;
                             TextView eP = findViewById(energy[countEnergy - 1]);
                             eP.setBackgroundResource(R.drawable.style_battery);
-                            TextView textCountEnergy = findViewById(R.id.countEnergy);
                             textCountEnergy.post(new Runnable() {
                                 @Override
                                 public void run() {
-                                    textCountEnergy.setText(" "+countEnergy + "/10");
+                                    textCountEnergy.setText(countEnergy + "/10");
+                                }
+                            });
+                            eT.post(new Runnable() {
+                                @Override
+                                public void run() {
+                                    eT.setVisibility(View.GONE);
                                 }
                             });
 
