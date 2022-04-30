@@ -125,27 +125,39 @@
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_margin="10dp"
+            android:paddingRight="1dp"
+            android:paddingTop="9dp"
+            android:background="@drawable/button_start_execute"
             android:contentDescription="buttonForge"
-            android:scaleType="centerCrop"
-            app:srcCompat="@drawable/forge" />
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/ic_forge" />
 
         <ImageButton
             android:id="@+id/buttonShop"
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_margin="10dp"
-            android:contentDescription="buttonShop"
-            android:scaleType="centerCrop"
-            app:srcCompat="@drawable/shop" />
+            android:paddingRight="3dp"
+            android:paddingLeft="4dp"
+            android:paddingTop="9dp"
+            android:paddingBottom="9dp"
+            android:background="@drawable/button_start_execute"
+            android:contentDescription="buttonForge"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/ic_shop" />
 
         <ImageButton
             android:id="@+id/buttonInventory"
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_margin="10dp"
-            android:contentDescription="buttonInventory"
-            android:scaleType="centerCrop"
-            app:srcCompat="@drawable/backpack" />
+            android:paddingLeft="1dp"
+            android:paddingTop="9dp"
+            android:paddingBottom="9dp"
+            android:background="@drawable/button_start_execute"
+            android:contentDescription="buttonForge"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/ic_backpack" />
 
     </LinearLayout>
 
