@@ -176,7 +176,7 @@
             android:contentDescription="AccountImage"
             android:layout_weight="1"
             android:scaleType="centerCrop"
-            tools:srcCompat="@tools:sample/avatars" />
+            tools:srcCompat="@drawable/avatar_tester" />
     </LinearLayout>
 
     <LinearLayout

@@ -1,7 +1,13 @@
 package com.example.firstapp;
 
+import android.app.Dialog;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -17,12 +23,10 @@ public class DialogProfile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.infoaccount_profile);
-
-        //ImageView backgroundProfile = findViewById(R.id.backgroundProfile);
-        //backgroundProfile.setBackgroundResource(R.drawable.style_image_profile_background);
-
-
     };
+
+
+
 
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {

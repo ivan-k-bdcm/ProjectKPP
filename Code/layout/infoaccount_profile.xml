@@ -11,6 +11,7 @@
 
 
     >
+
     <androidx.cardview.widget.CardView
         android:layout_width="605dp"
         android:layout_height="340dp"
@@ -48,38 +49,25 @@
             app:layout_constraintStart_toStartOf="@+id/backgroundProfile"
             app:layout_constraintTop_toTopOf="@+id/backgroundProfile" />
 
-        <ImageView
-            android:id="@+id/imageView5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:scaleType="centerCrop"
-            tools:srcCompat="@tools:sample/avatars"
-            android:layout_marginStart="430dp"
-            android:layout_marginTop="32dp"
-            app:layout_constraintStart_toStartOf="@+id/backgroundProfile"
-            app:layout_constraintTop_toTopOf="@+id/backgroundProfile"/>
-
-        <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/change_profile_avatar"
-            android:layout_marginStart="450dp"
-            android:layout_marginTop="160dp"
-            app:layout_constraintStart_toStartOf="@+id/backgroundProfile"
-            app:layout_constraintTop_toTopOf="@+id/backgroundProfile"
-            />
-
         <ImageButton
-            android:id="@+id/imageButton"
+            android:id="@+id/buttonBack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:contentDescription="Back to map"
-            app:srcCompat="?attr/actionModeCloseDrawable"
             android:layout_marginStart="48dp"
             android:layout_marginTop="275dp"
+            android:contentDescription="Back to map"
             app:layout_constraintStart_toStartOf="@+id/backgroundProfile"
-            app:layout_constraintTop_toTopOf="@+id/backgroundProfile"/>
+            app:layout_constraintTop_toTopOf="@+id/backgroundProfile"
+            app:srcCompat="?attr/actionModeCloseDrawable" />
+
+        <ImageButton
+            android:id="@+id/avatar"
+            android:layout_width="125dp"
+            android:layout_height="125dp"
+            android:layout_marginStart="430dp"
+            android:layout_marginTop="32dp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/avatar_tester" />
 
 
     </androidx.cardview.widget.CardView>

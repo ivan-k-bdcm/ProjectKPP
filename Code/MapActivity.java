@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -38,7 +39,6 @@ public class MapActivity extends AppCompatActivity {
     long currentTimeEnergyTimer;
 
 
-
     // Array for energy
     final int[] energy = {
             R.id.battery1, R.id.battery2,R.id.battery3,R.id.battery4,R.id.battery5,R.id.battery6,R.id.battery7,R.id.battery8,R.id.battery9,R.id.battery10
@@ -58,8 +58,15 @@ public class MapActivity extends AppCompatActivity {
         TextView eT = findViewById(R.id.energyTimer);
 
 
+
+
         ImageButton dialogProfileSettings = (ImageButton) findViewById(R.id.AccountImage);
+
+        // Change avatar
+        dialogProfileSettings.setBackgroundResource(R.drawable.avatar_tester);
         dialogProfileSettings.setOnClickListener(new View.OnClickListener() {
+
+
             @Override
             public void onClick(View view) {
                 dialog = new Dialog(MapActivity.this);
@@ -67,8 +74,18 @@ public class MapActivity extends AppCompatActivity {
                 dialog.setContentView(R.layout.infoaccount_profile);
                 dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 dialog.show();
+
+                ImageButton buttonBack = (ImageButton)dialog.findViewById(R.id.buttonBack);
+                buttonBack.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        dialog.dismiss();
+                    }
+                });
             }
         });
+
+
 
 
         ImageButton buttonEnergy = (ImageButton) findViewById(R.id.imageButton1);
@@ -109,12 +126,12 @@ public class MapActivity extends AppCompatActivity {
         Runnable runnableEnergyTimer = new Runnable() {
             @Override
             public void run() {
-
                 currentTimeEnergyTimer = System.currentTimeMillis();
 
 
                 if(countEnergy < 10 && currentTimeEnergyTimer - timeStartEnergyTimer > endTimeEnergyTimer) {
                     timeStartEnergyTimer = System.currentTimeMillis();
+                    eT.setVisibility(View.VISIBLE);
                     CountDownTimer energyTimer = new CountDownTimer(endTimeEnergyTimer, stepTimeEnergyTimer) {
                         @Override
                         public void onTick(long millisUntilFinished) {
@@ -139,12 +156,23 @@ public class MapActivity extends AppCompatActivity {
                                     textCountEnergy.setText(countEnergy + "/10");
                                 }
                             });
-                            eT.post(new Runnable() {
-                                @Override
-                                public void run() {
-                                    eT.setVisibility(View.GONE);
-                                }
-                            });
+
+                            if (countEnergy == 10) {
+                                eT.post(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        eT.setVisibility(View.GONE);
+                                    }
+                                });
+                            }
+                            else {
+                                eT.post(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        eT.setVisibility(View.VISIBLE);
+                                    }
+                                });
+                            }
 
                         }
                     }.start();
