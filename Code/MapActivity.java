@@ -1,5 +1,6 @@
 package com.example.firstapp;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -11,6 +12,7 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.Looper;
+import android.util.TypedValue;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
@@ -19,6 +21,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -60,8 +63,11 @@ public class MapActivity extends AppCompatActivity {
 
 
         TextView textCountEnergy = findViewById(R.id.countEnergy);
-        TextView eT = findViewById(R.id.energyTimer);
+        TextView energyTimer = findViewById(R.id.energyTimer);
+        ImageView energyTimerBar = findViewById(R.id.energyTimerBar);
 
+        energyTimer.setVisibility(View.GONE);
+        energyTimerBar.setVisibility(View.GONE);
 
 
 
@@ -95,6 +101,7 @@ public class MapActivity extends AppCompatActivity {
 
         ImageButton buttonEnergy = (ImageButton) findViewById(R.id.imageButton1);
         buttonEnergy.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("SetTextI18n")
             @Override
             public void onClick(View view) {
                 try {
@@ -102,19 +109,41 @@ public class MapActivity extends AppCompatActivity {
                         System.out.println("DON'T CLICK FU*ING BUTTON");
                     }
                     else {
-                        countEnergy--;
-                        for(int i = 0; i < 10; i++) {
-                            TextView eP = findViewById(energy[i]);
-                            eP.setBackgroundResource(R.drawable.style_battery);
+                        if(countEnergy == 10){
+                            energyTimer.setVisibility(View.VISIBLE);
+                            energyTimerBar.setVisibility(View.VISIBLE);
+                            Animation animationShowTimeAndBarTimer = AnimationUtils.loadAnimation(MapActivity.this, R.anim.showtimertextandbar);
+                            energyTimer.startAnimation(animationShowTimeAndBarTimer);
+                            energyTimerBar.startAnimation(animationShowTimeAndBarTimer);
+
+
+                            countEnergy--;
+                            for(int i = 0; i < 10; i++) {
+                                TextView energyPoint = findViewById(energy[i]);
+                                energyPoint.setBackgroundResource(R.drawable.style_battery);
+                            }
+
+
+                            for(int i = countEnergy; i < 10; i++) {
+                                TextView energyPoint = findViewById(energy[i]);
+                                energyPoint.setBackgroundResource(R.drawable.style_battery_empty);
+                                textCountEnergy.setText(" "+countEnergy + "/10");
+                            }
                         }
+                        else{
+                            countEnergy--;
+                            for(int i = 0; i < 10; i++) {
+                                TextView energyPoint = findViewById(energy[i]);
+                                energyPoint.setBackgroundResource(R.drawable.style_battery);
+                            }
 
 
-                        for(int i = countEnergy; i < 10; i++) {
-                            TextView eP = findViewById(energy[i]);
-                            eP.setBackgroundResource(R.drawable.style_battery_empty);
-                            textCountEnergy.setText(" "+countEnergy + "/10");
+                            for(int i = countEnergy; i < 10; i++) {
+                                TextView energyPoint = findViewById(energy[i]);
+                                energyPoint.setBackgroundResource(R.drawable.style_battery_empty);
+                                textCountEnergy.setText(" "+countEnergy + "/10");
+                            }
                         }
-
 
                     }
 
@@ -128,34 +157,70 @@ public class MapActivity extends AppCompatActivity {
 
 
         ImageButton buttonForge = (ImageButton) findViewById(R.id.buttonForge);
-        buttonForge.setOnClickListener(new View.OnClickListener() {
+        buttonForge.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View view) {
-                Animation animationScale = AnimationUtils.loadAnimation(MapActivity.this, R.anim.scalebutton);
-                buttonForge.startAnimation(animationScale);
+            public boolean onTouch(View v, MotionEvent event) {
+
+
+                float scaleOn = 0.8f;
+
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    v.setScaleX(scaleOn);
+                    v.setScaleY(scaleOn);
+                }
+                if (event.getAction() == MotionEvent.ACTION_UP) {
+                    v.setScaleX(1);
+                    v.setScaleY(1);
+                }
+
+                return false;
             }
         });
 
 
         ImageButton buttonShop = (ImageButton) findViewById(R.id.buttonShop);
-        buttonShop.setOnClickListener(new View.OnClickListener() {
+        buttonShop.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View view) {
-                Animation animationScale = AnimationUtils.loadAnimation(MapActivity.this, R.anim.scalebutton);
-                buttonShop.startAnimation(animationScale);
+            public boolean onTouch(View v, MotionEvent event) {
+
+
+                float scaleOn = 0.8f;
+
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    v.setScaleX(scaleOn);
+                    v.setScaleY(scaleOn);
+                }
+                if (event.getAction() == MotionEvent.ACTION_UP) {
+                    v.setScaleX(1);
+                    v.setScaleY(1);
+                }
+
+                return false;
             }
         });
+
 
 
         ImageButton buttonInventory = (ImageButton) findViewById(R.id.buttonInventory);
-        buttonInventory.setOnClickListener(new View.OnClickListener() {
+        buttonInventory.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View view) {
-                Animation animationScale = AnimationUtils.loadAnimation(MapActivity.this, R.anim.scalebutton);
-                buttonInventory.startAnimation(animationScale);
+            public boolean onTouch(View v, MotionEvent event) {
+
+
+                float scaleOn = 0.8f;
+
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    v.setScaleX(scaleOn);
+                    v.setScaleY(scaleOn);
+                }
+                if (event.getAction() == MotionEvent.ACTION_UP) {
+                    v.setScaleX(1);
+                    v.setScaleY(1);
+                }
+
+                return false;
             }
         });
-
 
         Runnable runnableEnergyTimer = new Runnable() {
             @Override
@@ -165,16 +230,30 @@ public class MapActivity extends AppCompatActivity {
 
                 if(countEnergy < 10 && currentTimeEnergyTimer - timeStartEnergyTimer > endTimeEnergyTimer) {
                     timeStartEnergyTimer = System.currentTimeMillis();
-                    eT.setVisibility(View.VISIBLE);
-                    CountDownTimer energyTimer = new CountDownTimer(endTimeEnergyTimer, stepTimeEnergyTimer) {
+                    energyTimer.setVisibility(View.VISIBLE);
+                    CountDownTimer energyTime = new CountDownTimer(endTimeEnergyTimer, stepTimeEnergyTimer) {
                         @Override
                         public void onTick(long millisUntilFinished) {
                             minutes = ((int)millisUntilFinished / 1000) / 60;
                             seconds = ((int)millisUntilFinished / 1000) % 60;
-                            eT.post(new Runnable() {
+                            energyTimer.post(new Runnable() {
                                 @Override
                                 public void run() {
-                                    eT.setText(minutes + ":" + seconds);
+                                    if(minutes >= 10 && seconds >= 10) {
+                                        energyTimer.setText(minutes + ":" + seconds);
+                                    }
+                                    else if(minutes >= 10 && seconds < 10){
+                                        energyTimer.setText(minutes + ":0" + seconds);
+                                    }
+                                    else if(minutes < 10 && seconds >= 10){
+                                        energyTimer.setText("0"+minutes + ":" + seconds);
+                                    }
+                                    else{
+                                        energyTimer.setText("0"+minutes + ":0" + seconds);
+                                    }
+
+
+
                                 }
                             });
                         }
@@ -182,8 +261,8 @@ public class MapActivity extends AppCompatActivity {
                         @Override
                         public void onFinish() {
                             countEnergy++;
-                            TextView eP = findViewById(energy[countEnergy - 1]);
-                            eP.setBackgroundResource(R.drawable.style_battery);
+                            TextView energyPoint = findViewById(energy[countEnergy - 1]);
+                            energyPoint.setBackgroundResource(R.drawable.style_battery);
                             textCountEnergy.post(new Runnable() {
                                 @Override
                                 public void run() {
@@ -192,18 +271,22 @@ public class MapActivity extends AppCompatActivity {
                             });
 
                             if (countEnergy == 10) {
-                                eT.post(new Runnable() {
+                                energyTimer.post(new Runnable() {
                                     @Override
                                     public void run() {
-                                        eT.setVisibility(View.GONE);
+                                        Animation animationHideTimeAndBarTimer = AnimationUtils.loadAnimation(MapActivity.this, R.anim.hidetimertextandbar);
+                                        energyTimer.startAnimation(animationHideTimeAndBarTimer);
+                                        energyTimerBar.startAnimation(animationHideTimeAndBarTimer);
+                                        energyTimer.setVisibility(View.GONE);
+                                        energyTimerBar.setVisibility(View.GONE);
                                     }
                                 });
                             }
                             else {
-                                eT.post(new Runnable() {
+                                energyTimer.post(new Runnable() {
                                     @Override
                                     public void run() {
-                                        eT.setVisibility(View.VISIBLE);
+                                        energyTimer.setVisibility(View.VISIBLE);
                                     }
                                 });
                             }
