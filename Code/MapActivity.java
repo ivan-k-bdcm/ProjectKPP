@@ -11,13 +11,17 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.Looper;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -37,6 +41,7 @@ public class MapActivity extends AppCompatActivity {
     private Handler customHandler = new Handler();
     long timeStartEnergyTimer = 0;
     long currentTimeEnergyTimer;
+
 
 
     // Array for energy
@@ -121,6 +126,35 @@ public class MapActivity extends AppCompatActivity {
 
         });
 
+
+        ImageButton buttonForge = (ImageButton) findViewById(R.id.buttonForge);
+        buttonForge.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Animation animationScale = AnimationUtils.loadAnimation(MapActivity.this, R.anim.scalebutton);
+                buttonForge.startAnimation(animationScale);
+            }
+        });
+
+
+        ImageButton buttonShop = (ImageButton) findViewById(R.id.buttonShop);
+        buttonShop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Animation animationScale = AnimationUtils.loadAnimation(MapActivity.this, R.anim.scalebutton);
+                buttonShop.startAnimation(animationScale);
+            }
+        });
+
+
+        ImageButton buttonInventory = (ImageButton) findViewById(R.id.buttonInventory);
+        buttonInventory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Animation animationScale = AnimationUtils.loadAnimation(MapActivity.this, R.anim.scalebutton);
+                buttonInventory.startAnimation(animationScale);
+            }
+        });
 
 
         Runnable runnableEnergyTimer = new Runnable() {

@@ -9,6 +9,7 @@
     >
 
     <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:contentDescription="HScrollView"
@@ -31,87 +32,92 @@
 
             <ImageButton
                 android:id="@+id/imageButton1"
-                android:contentDescription="cave1"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:layout_marginTop="155dp"
                 android:layout_marginLeft="25dp"
+                android:layout_marginTop="155dp"
+                android:contentDescription="cave1"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/hood_bar" />
+
             <ImageButton
                 android:id="@+id/imageButton2"
-                android:contentDescription="cave2"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:layout_marginTop="90dp"
                 android:layout_marginLeft="175dp"
+                android:layout_marginTop="90dp"
+                android:contentDescription="cave2"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/hood_bar" />
+
             <ImageButton
                 android:id="@+id/imageButton3"
-                android:contentDescription="cave3"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:layout_marginTop="240dp"
                 android:layout_marginLeft="385dp"
+                android:layout_marginTop="240dp"
+                android:contentDescription="cave3"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/hood_bar" />
+
             <ImageButton
                 android:id="@+id/imageButton4"
-                android:contentDescription="cave4"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:layout_marginTop="155dp"
                 android:layout_marginLeft="660dp"
+                android:layout_marginTop="155dp"
+                android:contentDescription="cave4"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/hood_bar" />
+
             <ImageButton
                 android:id="@+id/imageButton5"
-                android:contentDescription="cave5"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:layout_marginTop="135dp"
                 android:layout_marginLeft="880dp"
+                android:layout_marginTop="135dp"
+                android:contentDescription="cave5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/hood_bar" />
+
             <ImageButton
                 android:id="@+id/imageButton6"
-                android:contentDescription="cave6"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:layout_marginTop="200dp"
                 android:layout_marginLeft="1000dp"
+                android:layout_marginTop="200dp"
+                android:contentDescription="cave6"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/hood_bar" />
-
-            <ImageView
-                android:id="@+id/imageView2"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="410dp"
-                android:layout_width="80dp"
-                android:layout_height="40dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/hood_bar" />
-
-            <TextView
-                android:id="@+id/energyTimer"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="430dp"
-                android:layout_marginTop="30dp"
-                android:text=""
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </HorizontalScrollView>
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginRight="250dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/horizontalScrollView"
+        app:srcCompat="@drawable/hood_bar" />
+
+    <TextView
+        android:id="@+id/energyTimer"
+        android:layout_width="0dp"
+        android:layout_height="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginRight="270dp"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="@+id/horizontalScrollView"
+        app:layout_constraintTop_toTopOf="@+id/horizontalScrollView" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -125,9 +131,11 @@
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_margin="10dp"
-            android:paddingRight="1dp"
-            android:paddingTop="9dp"
-            android:background="@drawable/button_start_execute"
+            android:paddingRight="3dp"
+            android:paddingLeft="2dp"
+            android:paddingTop="11dp"
+            android:paddingBottom="2dp"
+            android:background="@drawable/button_forge_shop_inventory_execute"
             android:contentDescription="buttonForge"
             android:scaleType="centerInside"
             app:srcCompat="@drawable/ic_forge" />
@@ -137,11 +145,11 @@
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_margin="10dp"
-            android:paddingRight="3dp"
-            android:paddingLeft="4dp"
-            android:paddingTop="9dp"
-            android:paddingBottom="9dp"
-            android:background="@drawable/button_start_execute"
+            android:paddingRight="15dp"
+            android:paddingLeft="15dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="11dp"
+            android:background="@drawable/button_forge_shop_inventory_execute"
             android:contentDescription="buttonForge"
             android:scaleType="centerInside"
             app:srcCompat="@drawable/ic_shop" />
@@ -151,10 +159,11 @@
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_margin="10dp"
-            android:paddingLeft="1dp"
-            android:paddingTop="9dp"
-            android:paddingBottom="9dp"
-            android:background="@drawable/button_start_execute"
+            android:paddingRight="6dp"
+            android:paddingLeft="6dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:background="@drawable/button_forge_shop_inventory_execute"
             android:contentDescription="buttonForge"
             android:scaleType="centerInside"
             app:srcCompat="@drawable/ic_backpack" />
@@ -174,6 +183,7 @@
 
 
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -185,8 +195,8 @@
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_margin="10dp"
-            android:contentDescription="AccountImage"
             android:layout_weight="1"
+            android:contentDescription="AccountImage"
             android:scaleType="centerCrop"
             tools:srcCompat="@drawable/avatar_tester" />
     </LinearLayout>
