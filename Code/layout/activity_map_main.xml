@@ -114,9 +114,10 @@
         android:id="@+id/energyTimer"
         android:layout_width="40dp"
         android:layout_height="18dp"
-        android:layout_marginTop="2dp"
+        android:layout_marginTop="4dp"
         android:layout_marginRight="365dp"
         android:text="12:00"
+        android:textSize="12dp"
         app:layout_constraintEnd_toEndOf="@+id/horizontalScrollView"
         app:layout_constraintTop_toTopOf="@+id/horizontalScrollView" />
 
