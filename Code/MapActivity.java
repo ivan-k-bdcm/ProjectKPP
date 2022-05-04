@@ -76,8 +76,6 @@ public class MapActivity extends AppCompatActivity {
         // Change avatar
         dialogProfileSettings.setBackgroundResource(R.drawable.avatar_tester);
         dialogProfileSettings.setOnClickListener(new View.OnClickListener() {
-
-
             @Override
             public void onClick(View view) {
                 dialog = new Dialog(MapActivity.this);
@@ -96,6 +94,47 @@ public class MapActivity extends AppCompatActivity {
             }
         });
 
+
+        ImageButton buttonForgeTo = (ImageButton) findViewById(R.id.buttonForge);
+        buttonForgeTo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    Intent intentForge = new Intent(MapActivity.this, ForgeActivity.class);
+                    startActivity(intentForge); finish();
+                } catch (Exception e){
+                    //Exception
+                }
+            }
+        });
+
+
+        ImageButton buttonShopTo = (ImageButton) findViewById(R.id.buttonShop);
+        buttonShopTo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    Intent intentShop = new Intent(MapActivity.this, ShopActivity.class);
+                    startActivity(intentShop); finish();
+                } catch (Exception e){
+                    //Exception
+                }
+            }
+        });
+
+
+        ImageButton buttonInventoryTo = (ImageButton) findViewById(R.id.buttonInventory);
+        buttonInventoryTo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    Intent intentInventory = new Intent(MapActivity.this, InventoryActivity.class);
+                    startActivity(intentInventory); finish();
+                } catch (Exception e){
+                    //Exception
+                }
+            }
+        });
 
 
 

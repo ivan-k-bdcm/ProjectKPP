@@ -1,29 +1,38 @@
 package com.example.firstapp;
 
-import android.app.Dialog;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
-import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class DialogProfile extends AppCompatActivity {
+
+public class InventoryActivity extends AppCompatActivity {
+
 
     private long backPressedTime;
     private Toast backToast;
     private View decorView;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.infoaccount_profile);
-    };
+        setContentView(R.layout.activity_inventory);
+
+
+        // Implementation for hiding the bar
+        decorView = getWindow().getDecorView();
+        decorView.setOnSystemUiVisibilityChangeListener(new View.OnSystemUiVisibilityChangeListener() {
+            @Override
+            public void onSystemUiVisibilityChange(int visibility) {
+                if (visibility == 0) {
+                    decorView.setSystemUiVisibility(hideSystemBar());
+                }
+            }
+        });
+
+    }
 
 
     @Override
@@ -32,6 +41,7 @@ public class DialogProfile extends AppCompatActivity {
 
         if(hasFocus) {
             decorView.setSystemUiVisibility(hideSystemBar());
+
         }
     }
 
@@ -45,10 +55,10 @@ public class DialogProfile extends AppCompatActivity {
                 | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
     }
 
+
     // Double tap for exit
     @Override
     public void onBackPressed() {
-
 
         if (backPressedTime + 2000 > System.currentTimeMillis()) {
             backToast.cancel();
@@ -61,9 +71,5 @@ public class DialogProfile extends AppCompatActivity {
         }
 
         backPressedTime = System.currentTimeMillis();
-
     }
-
-
-
 }
