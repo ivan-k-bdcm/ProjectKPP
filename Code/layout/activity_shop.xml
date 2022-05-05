@@ -14,4 +14,12 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/shop_main" />
 
+    <ImageButton
+        android:id="@+id/shopBackToMap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@android:drawable/btn_dialog"
+        tools:layout_editor_absoluteX="2dp"
+        tools:layout_editor_absoluteY="1dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -24,6 +24,20 @@ public class ForgeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_forge);
 
 
+        ImageButton forgeBackToMap = (ImageButton) findViewById(R.id.forgeBackToMap);
+        forgeBackToMap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    Intent intent = new Intent(ForgeActivity.this, MapActivity.class);
+                    startActivity(intent); finish();
+                } catch (Exception e){
+                    //Exception
+                }
+            }
+        });
+
+
         // Implementation for hiding the bar
         decorView = getWindow().getDecorView();
         decorView.setOnSystemUiVisibilityChangeListener(new View.OnSystemUiVisibilityChangeListener() {

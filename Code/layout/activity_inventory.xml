@@ -14,4 +14,10 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/inventory_main" />
 
+    <ImageButton
+        android:id="@+id/inventoryBackToMap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@android:drawable/btn_dialog" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
