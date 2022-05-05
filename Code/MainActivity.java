@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
         // Implementation for hiding the bar
         decorView = getWindow().getDecorView();
         decorView.setOnSystemUiVisibilityChangeListener(new View.OnSystemUiVisibilityChangeListener() {
