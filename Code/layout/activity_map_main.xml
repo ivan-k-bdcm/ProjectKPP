@@ -31,7 +31,7 @@
                 app:srcCompat="@drawable/activity_map" />
 
             <ImageButton
-                android:id="@+id/imageButton1"
+                android:id="@+id/mineCoreStarter"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:layout_marginLeft="25dp"

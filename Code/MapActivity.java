@@ -75,6 +75,7 @@ public class MapActivity extends AppCompatActivity {
 
         // Change avatar
         dialogProfileSettings.setBackgroundResource(R.drawable.avatar_tester);
+        // Dialog Window
         dialogProfileSettings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -137,12 +138,29 @@ public class MapActivity extends AppCompatActivity {
         });
 
 
-
-        ImageButton buttonEnergy = (ImageButton) findViewById(R.id.imageButton1);
+        // Not working
+        ImageButton buttonEnergy = (ImageButton) findViewById(R.id.mineCoreStarter);
         buttonEnergy.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("SetTextI18n")
             @Override
             public void onClick(View view) {
+                // MineCoreStarter Info
+                dialog = new Dialog(MapActivity.this);
+                dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                dialog.setContentView(R.layout.info_minecore_starter);
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                dialog.show();
+
+                Button letMining = (Button) dialog.findViewById(R.id.letMining);
+                letMining.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intentMineCoreStarter = new Intent(MapActivity.this, MineCoreStarterActivity.class);
+                        startActivity(intentMineCoreStarter); finish();
+                        dialog.dismiss();
+                    }
+                });
+                // Energy
                 try {
                     if (countEnergy == 0) {
                         System.out.println("DON'T CLICK FU*ING BUTTON");
